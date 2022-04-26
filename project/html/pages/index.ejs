@@ -7,16 +7,15 @@
   <!-- the classes 'page-header' and 'btn btn-dark' create bootstrap components.  -->
   <!-- Check out more components here: http://getbootstrap.com/components/ -->
   <div class="page-header">
-
+    <% include ../helpers/navbar %>
   
-    <h1>My Web Ape</h1>
+    <h1>Meeth Tour</h1>
   </div>
 
-  <p>Click on the button for a surprise.</p>
-
-  <button onClick="showPicture()" class="btn btn-dark">Click me</button>
-
-  <div id="image"></div>
+  <form onsubmit="submitFunction()" action="#"></form>
+    Tournummer:<br>
+    <input id="Tournummer"><br>
+    <button>Bestätigen</button>
   
 </body>
 

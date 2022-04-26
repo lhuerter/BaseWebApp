@@ -1,9 +1,21 @@
-function showPicture(){
-  // use jQuery ($ is shorthand) to find the div on the page and then change the html
-  // 'rounded-circle' is a bootstrap thing! Check out more here: http://getbootstrap.com/css/
-  $("#image").append('<img class="rounded-circle" src="images/high-five.gif"/>');
-  $("p").html("High five! You're building your first web app!");
+function addMessage(Tournummer){
+  const db = getDatabase();
+  const postListRef = ref(db, 'posts');
+  const newPostRef = push(postListRef);
+  set(newPostRef, {
+    Tournummer: Tournummer 
+  })
+  .then(() => {
+    // Data saved successfully!
+    window.location.reload();
+  })
+  .catch((error) => {
+    // The write failed...
+  });
+}
 
-  // jQuery can do a lot of crazy stuff, so make sure to Google around to find out more
-  
+function submitFunction(){
+
+  var Tournummer = $("#Tournummer").val();
+  addMessage(Tournummer);
 }
